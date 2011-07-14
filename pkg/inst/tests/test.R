@@ -115,9 +115,9 @@ test_that("kmeans data is extracted correctly", {
 	pcdata <- cluster_data(pc)
 	eedata <- cbind(cdata, pcdata)
 
-	expect_that(ellipsoid_data(eedata), is_a("data.frame"))
+	expect_that(.ellipsoid_data(eedata), is_a("data.frame"))
 	
-	eldata <- ellipsoid_data(eedata)
+	eldata <- .ellipsoid_data(eedata)
 
 	p <- ggplot() + 
 			geom_point(data=cbind(cdata, pcdata), aes(x=x, y=y, colour=factor(cluster))) +
